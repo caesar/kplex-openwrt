@@ -1,6 +1,9 @@
 ##############################################
 # OpenWrt Makefile for kplex                 #
+#                                            #
 # Copyright (C) Caesar Schinas 2014          #
+# Licensed under the terms of the            #
+# GNU General Public License, v3 or later    #
 ##############################################
 
 include $(TOPDIR)/rules.mk
