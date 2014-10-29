@@ -23,12 +23,12 @@ For example, the SDK for the common ar71xx architecture is found [here](http://d
 
 Download and unpack the SDK.
 
-In the `packages` subdirectory of the SDK, create a directory called `kplex`.
-Place the contents of this repository in the `packages/kplex` directory.
+In the `package` subdirectory of the SDK, create a directory called `kplex`.
+Place the contents of this repository in the new `package/kplex` directory.
 
 On the command line, `cd` to the SDK directory and execute the command
 
-    $ make plugin/kplex/build
+    $ make package/kplex/compile
 
 This will download the source code for kplex, cross-compile it for your router, and package it in an IPKG installer package.
 
@@ -45,7 +45,7 @@ SSH into your router and install the package using OPKG.
 You have to run `opkg update` first to update the package lists, so that OPKG will know where to download the dependency `libpthreads`.
 
     $ ssh root@192.168.1.1
-	$ opkg update
+    $ opkg update
     $ opkg install kplex_1.1-1_ar71xx.ipk
 
 The commands above should result in `libpthreads` being downloaded and installed, and then kplex being installed.
