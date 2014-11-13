@@ -10,12 +10,12 @@ include $(TOPDIR)/rules.mk
 
 # Name and release number of this package
 PKG_NAME:=kplex
-PKG_VERSION:=1.1
+PKG_VERSION:=1.1.1
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tgz
 PKG_SOURCE_URL:=http://www.stripydog.com/download
-PKG_MD5SUM:=7b37172c04f820c4e43892c4b4f686d6
+PKG_MD5SUM:=7864e86db23706bd35c0380b5ad3a5eb
 
 PKG_LICENSE:=GPL-3.0+
 
