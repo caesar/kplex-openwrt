@@ -25,9 +25,9 @@ For example, the OpenWrt 15.05.1 SDK for the common ar71xx architecture is found
 
 2. Open a shell and `cd` to the extracted `OpenWrt-SDK` directory.
 
-3. Clone this repo into the `packages/kplex` subdir:
+3. Clone this repo into the `package/kplex` subdir:
     ```bash
-    $ git clone https://github.com/caesar/kplex-openwrt.git packages/kplex
+    $ git clone https://github.com/caesar/kplex-openwrt.git package/kplex
     ```
 
 4. Use `make` to build the `package/kplex/compile` target:
