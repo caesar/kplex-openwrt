@@ -23,10 +23,10 @@ Please note that these instructions assume a certain amount of familiarity with 
 
 1. Install the prerequisites required to run the OpenWrt build system.\
     This depends on your system. The requirements are the same as for the Buildroot and are [listed here](https://wiki.openwrt.org/doc/howto/buildroot.exigence).\
-    For example, on 64-bit Ubuntu you will need the following:
+    The following will normally be sufficient:
     ```bash
     $ sudo apt-get update
-    $ sudo apt-get install build-essential subversion libncurses5-dev zlib1g-dev gawk gcc-multilib flex git-core gettext libssl-dev unzip
+    $ sudo apt-get install git build-essential ccache libssl-dev libncurses5-dev unzip gawk zlib1g-dev
     ```
 
 2. Download and unpack the OpenWrt SDK.\
