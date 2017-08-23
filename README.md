@@ -8,6 +8,7 @@ By installing it on a USB-enabled router, it is possible to broadcast NMEA data 
 
 [For more information about kplex see http://www.stripydog.com/kplex/](http://www.stripydog.com/kplex/).
 
+
 ## Background
 
 To run kplex on your router, it must be compiled for your router's architecture.
@@ -15,22 +16,41 @@ Rather than compiling software on the router directly, as we would on most compu
 
 Fortunately, OpenWrt makes cross-compiling software very easy, using the [OpenWrt SDK](https://wiki.openwrt.org/doc/howto/obtain.firmware.sdk) which is pre-compiled for every supported architecture, saving you from having to build the whole system from scratch using the [OpenWrt Buildroot](https://wiki.openwrt.org/doc/howto/buildroot.exigence).
 
-You can find the SDK for your router's architecture from [the OpenWrt downloads page](https://downloads.openwrt.org/). The SDK download you need is found in the same directory as the firmware for your router.
-For example, the OpenWrt 15.05.1 SDK for the common ar71xx architecture is found [here](https://downloads.openwrt.org/chaos_calmer/15.05.1/ar71xx/generic/OpenWrt-SDK-15.05.1-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2).
+Please note that these instructions assume a certain amount of familiarity with the command line.
+
+
+## Seting up the environment
+
+1. Install the prerequisites required to run the OpenWrt build system.\
+    This depends on your system. The requirements are the same as for the Buildroot and are [listed here](https://wiki.openwrt.org/doc/howto/buildroot.exigence).\
+    For example, on 64-bit Ubuntu you will need the following:
+    ```bash
+    $ sudo apt-get update
+    $ sudo apt-get install build-essential subversion libncurses5-dev zlib1g-dev gawk gcc-multilib flex git-core gettext libssl-dev unzip
+    ```
+
+2. Download and unpack the OpenWrt SDK.\
+    You can find the SDK for your router's architecture from [the OpenWrt downloads page](https://downloads.openwrt.org/). The SDK download you need is found in the same directory as the firmware for your router.\
+    For example, the OpenWrt 15.05.1 SDK for the common `ar71xx` architecture is found [here](https://downloads.openwrt.org/chaos_calmer/15.05.1/ar71xx/generic/OpenWrt-SDK-15.05.1-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2).
+
+3. Set up the SDK.\
+    `cd` into the extracted `SDK` directory and execute the following command:
+    ```bash
+    $ make menuconfig
+    ```
+    A menu-based interface will appear. Choose the `<Exit>` option, then choose to `<Save>` the generated config.
 
 
 ## Building
 
-1. Download and unpack the OpenWrt SDK.
+1. Ensure you are in the root `SDK` directory.
 
-2. Open a shell and `cd` to the extracted `OpenWrt-SDK` directory.
-
-3. Clone this repo into the `package/kplex` subdir:
+2. Clone this repo into the `package/kplex` subdir:
     ```bash
     $ git clone https://github.com/caesar/kplex-openwrt.git package/kplex
     ```
 
-4. Use `make` to build the `package/kplex/compile` target:
+3. Use `make` to build the `package/kplex/compile` target:
     ```bash
     $ make package/kplex/compile
     ```
